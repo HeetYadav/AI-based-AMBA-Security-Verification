@@ -1,10 +1,16 @@
 # Documentation
 
-This directory contains the technical documentation for the AI-Assisted Hardware Trojan Detection project.
+This directory contains the technical documentation for the AI-Assisted Hardware Trojan Detection project. The files are intended to be read in order from broad overview down to component-specific detail.
 
-## 🗂️ Documentation Map
+## Document Index
 
-1.  **[FULL_PROJECT_GUIDE.md](FULL_PROJECT_GUIDE.md)**: **Start Here.** A comprehensive, beginner-friendly guide covering hardware, software, and AI.
-2.  **[TROJAN_DESIGN.md](TROJAN_DESIGN.md)**: Detailed technical specs for the 3 Trojan variants (A, B, and C).
-3.  **[VERIFICATION.md](VERIFICATION.md)**: Explanation of the SystemVerilog verification environment, assertions, and coverage.
-4.  **[AI_PIPELINE.md](AI_PIPELINE.md)**: Deep dive into the machine learning models and feature engineering logic.
+| Document | Audience | Description |
+|---|---|---|
+| [FULL_PROJECT_GUIDE.md](FULL_PROJECT_GUIDE.md) | All readers | Comprehensive, beginner-friendly walkthrough covering hardware, software, and AI layers |
+| [TROJAN_DESIGN.md](TROJAN_DESIGN.md) | RTL / Security | Technical specification of all three Trojan variants: triggers, payloads, and stealth properties |
+| [VERIFICATION.md](VERIFICATION.md) | Verification engineers | SystemVerilog verification environment, SVA property list, and functional coverage methodology |
+| [AI_PIPELINE.md](AI_PIPELINE.md) | ML / Data engineers | Deep dive into the anomaly detection models, feature engineering rationale, and result interpretation |
+
+## Reading Order
+
+Start with `FULL_PROJECT_GUIDE.md` for an end-to-end conceptual overview. Then read `TROJAN_DESIGN.md` to understand what the AI is trying to detect, followed by `AI_PIPELINE.md` for how detection is achieved. `VERIFICATION.md` is relevant if you are extending or auditing the SystemVerilog environment.
