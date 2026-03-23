@@ -1,0 +1,13 @@
+*.vcd
+*.wlf
+*.log
+*.vstf
+modelsim.ini
+transcript
+work/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db

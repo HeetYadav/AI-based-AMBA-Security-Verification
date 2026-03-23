@@ -1,0 +1,85 @@
+============================================================
+
+============================================================
+VARIANT A  (n=995, trojan rows=0)
+
+  Mode=FULL
+    IF:  F1=0.0, P=0.0, R=0.0, TP=0, TN=945, FP=50, FN=0, DetRate=0%
+    SVM: F1=0.0, P=0.0, R=0.0, TP=0, TN=949, FP=46, FN=0, DetRate=0%
+
+  Mode=BLIND
+    IF:  F1=0.0, P=0.0, R=0.0, TP=0, TN=945, FP=50, FN=0, DetRate=0%
+    SVM: F1=0.0, P=0.0, R=0.0, TP=0, TN=949, FP=46, FN=0, DetRate=0%
+
+=== Feature Separation (Normal vs Trojan) ===
+Feature                         Normal Mean  Trojan Mean    Ratio
+addr_delta                          33.2020          nan      nanx
+read_write_ratio                     0.5207          nan      nanx
+data_deviation_from_mean            11.2313          nan      nanx
+
+=== Address Coverage ===
+Bins hit: 8/8 = 100.0%
+  Region 0: 0x00-0x1F: 607 transactions
+  Region 1: 0x20-0x3F: 93 transactions
+  Region 2: 0x40-0x5F: 61 transactions
+  Region 3: 0x60-0x7F: 44 transactions
+  Region 4: 0x80-0x9F: 47 transactions
+  Region 5: 0xA0-0xBF: 56 transactions
+  Region 6: 0xC0-0xDF: 48 transactions
+  Region 7: 0xE0-0xFF: 39 transactions
+
+============================================================
+VARIANT B  (n=20, trojan rows=2)
+
+  Mode=FULL
+    IF:  F1=0.5, P=0.5, R=0.5, TP=1, TN=17, FP=1, FN=1, DetRate=50.0%
+    SVM: F1=0.364, P=0.222, R=1.0, TP=2, TN=11, FP=7, FN=0, DetRate=100.0%
+
+  Mode=BLIND
+    IF:  F1=0.8, P=0.667, R=1.0, TP=2, TN=17, FP=1, FN=0, DetRate=100.0%
+    SVM: F1=0.4, P=0.25, R=1.0, TP=2, TN=12, FP=6, FN=0, DetRate=100.0%
+
+=== Feature Separation (Normal vs Trojan) ===
+Feature                         Normal Mean  Trojan Mean    Ratio
+addr_delta                          50.1667      74.0000     1.48x
+read_write_ratio                     0.3373       0.5500     1.63x
+data_deviation_from_mean             5.0000     144.5000    28.90x
+
+=== Address Coverage ===
+Bins hit: 4/8 = 50.0%
+  Region 0: 0x00-0x1F: 12 transactions
+  Region 1: 0x20-0x3F: 0 transactions
+  Region 2: 0x40-0x5F: 0 transactions
+  Region 3: 0x60-0x7F: 3 transactions
+  Region 4: 0x80-0x9F: 0 transactions
+  Region 5: 0xA0-0xBF: 3 transactions
+  Region 6: 0xC0-0xDF: 2 transactions
+  Region 7: 0xE0-0xFF: 0 transactions
+
+============================================================
+VARIANT C  (n=20, trojan rows=2)
+
+  Mode=FULL
+    IF:  F1=0.5, P=0.5, R=0.5, TP=1, TN=17, FP=1, FN=1, DetRate=50.0%
+    SVM: F1=0.364, P=0.222, R=1.0, TP=2, TN=11, FP=7, FN=0, DetRate=100.0%
+
+  Mode=BLIND
+    IF:  F1=0.8, P=0.667, R=1.0, TP=2, TN=17, FP=1, FN=0, DetRate=100.0%
+    SVM: F1=0.4, P=0.25, R=1.0, TP=2, TN=12, FP=6, FN=0, DetRate=100.0%
+
+=== Feature Separation (Normal vs Trojan) ===
+Feature                         Normal Mean  Trojan Mean    Ratio
+addr_delta                          50.1667      74.0000     1.48x
+read_write_ratio                     0.3373       0.5500     1.63x
+data_deviation_from_mean             5.0000     144.5000    28.90x
+
+=== Address Coverage ===
+Bins hit: 4/8 = 50.0%
+  Region 0: 0x00-0x1F: 12 transactions
+  Region 1: 0x20-0x3F: 0 transactions
+  Region 2: 0x40-0x5F: 0 transactions
+  Region 3: 0x60-0x7F: 3 transactions
+  Region 4: 0x80-0x9F: 0 transactions
+  Region 5: 0xA0-0xBF: 3 transactions
+  Region 6: 0xC0-0xDF: 2 transactions
+  Region 7: 0xE0-0xFF: 0 transactions
