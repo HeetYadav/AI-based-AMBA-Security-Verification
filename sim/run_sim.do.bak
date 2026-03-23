@@ -1,0 +1,52 @@
+// =============================================================================
+// Script  : run_sim.do
+// Project : AI-Assisted Stealth Hardware Trojan Detection
+// Purpose : ModelSim / Questa Sim compilation and simulation script
+// =============================================================================
+
+proc run_variant { variant } {
+    echo ""
+    echo "============================================================"
+    echo " PASS $variant - Compiling and simulating Trojan Variant $variant"
+    echo "============================================================"
+
+    quit -sim
+
+    if { [file exists work] } {
+        vdel -lib work -all
+    }
+    vlib work
+    vmap work work
+
+    vlog ../rtl/apb_slave_golden.v
+
+    vlog ../rtl/stealth_trojan.v
+    vlog ../rtl/stealth_trojan_b.v
+    vlog ../rtl/stealth_trojan_c.v
+
+    vlog ../rtl/apb_slave.v
+    vlog ../rtl/apb_slave_b.v
+    vlog ../rtl/apb_slave_c.v
+
+    vlog ../rtl/apb_master.v
+
+    vlog -sv ../tb/apb_tb.sv
+    # vlog -sv ../tb/assertions.sv
+    # vlog -sv ../tb/coverage.sv
+
+    vsim -novopt -g TROJAN_VARIANT=$variant work.apb_tb
+
+    add wave -recursive *
+
+    run -all
+}
+
+run_variant A
+run_variant B
+run_variant C
+
+echo ""
+echo "============================================================"
+echo "  All three variant simulations complete."
+echo "============================================================"
+echo ""
