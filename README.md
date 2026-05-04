@@ -32,7 +32,7 @@ AI-based-AMBA-Security-Verification/
 
 ## Quick Start
 
-**Step 1 — Initialize the Python environment**
+**Step 1: Initialize the Python environment**
 
 ```bash
 python scripts/setup_env.py
@@ -40,7 +40,7 @@ python scripts/setup_env.py
 
 Expected output: `[SUCCESS] Environment check passed. Ready to run the pipeline.`
 
-**Step 2 — Run the hardware simulation (ModelSim / Questa)**
+**Step 2: Run the hardware simulation (ModelSim / Questa)**
 
 ```tcl
 cd sim/
@@ -52,7 +52,7 @@ Expected transcript messages:
 - `[TROJAN DETECTED] Variant=B Cycle=...`
 - `[TROJAN DETECTED] Variant=C Cycle=...`
 
-**Step 3 — Run the AI detection pipeline**
+**Step 3: Run the AI detection pipeline**
 
 ```bash
 python scripts/run_pipeline.py
